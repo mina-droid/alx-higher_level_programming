@@ -8,19 +8,19 @@
 
 int check_cycle(listint_t *list)
 {
-listint_t * temp;
-if(!list)
-{
-return (0);
-}
-temp = list;
-while(temp->next != list && temp->next != NULL)
-{
-temp->next = temp->next->next;
-}
-if(temp->next == NULL)
-{
-return (0);
-}
-return(1);
+	listint_t *slow = list;
+	listint_t *fast = list;
+
+	if (!list)
+		return (0);
+
+	while (slow && fast && fast->next)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast)
+			return (1);
+	}
+
+	return (0);
 }
