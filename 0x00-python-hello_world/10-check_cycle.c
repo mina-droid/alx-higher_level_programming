@@ -11,15 +11,19 @@
 
 int check_cycle(listint_t *list)
 {
-listint_t ** temp;
+listint_t * temp;
+if(!list)
+{
+return (0);
+}
 temp = list;
-while(list->next != NULL)
+while(temp->next != list && temp->next != NULL)
 {
-list->next = list.next;
+temp->next = temp->next->next;
 }
-if(list->next == temp)
+if(temp->next == NULL)
 {
-return (1);
+return (0);
 }
-return(0);
+return(1);
 }
