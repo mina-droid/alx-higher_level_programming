@@ -1,11 +1,4 @@
 #!/usr/bin/python3
-
-for i in range (0, 99):
-
-	if i == 98:
-
-		print(f"{i} = {hex(i)}", end="")
-
-	else:
-
-		print(f"{i} = {hex(i)}")
+"""Print numbers 0 to 98 in decimal and hexadecimal."""
+for number in range(0, 99):
+    print("{} = {}".format(number, hex(number)))
