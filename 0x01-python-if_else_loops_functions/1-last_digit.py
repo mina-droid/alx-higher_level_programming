@@ -21,3 +21,4 @@ elif last_digit == 0:
 elif last_digit < 6 and last_digit != 0:
 
 	print("and is less than 6 and not 0")
+
